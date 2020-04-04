@@ -13,7 +13,7 @@ class SelectAjaxComponent extends Component {
         this.loadData();
     }
     loadData=()=>{
-        var URLToGetItems = "https://wft3xcj0z2.execute-api.us-east-1.amazonaws.com/stage3/bucket-all-data?collection=ComputeService";
+        var URLToGetItems;
         axios.get(URLToGetItems , {
     }).then((resp) => {
         var arrayChoice = ['Select Image'];
@@ -29,7 +29,7 @@ class SelectAjaxComponent extends Component {
 
 handleSub(evt){
     var urldata = evt.target.value;
-    var URLToSelectImage = `https://wft3xcj0z2.execute-api.us-east-1.amazonaws.com/stage1?choice=${urldata}`;
+    var URLToSelectImage;
     if(urldata === 'Select Image'){
         return alert("No option Selected");
     }
